@@ -1,17 +1,18 @@
 import { Toolbar } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import FormDialog from "./FormDialog";
 import Posts from "./Posts";
-import { Player } from '@livepeer/react';
+import { Player } from "@livepeer/react";
 
 function CommunityFeed(props) {
   const name = "Guitar";
 
-  let posts = [
+  const [newPost, setNewPost] = useState(null);
 
+  let posts = [
     {
       author: "Tatsuya",
       avatar: "T",
@@ -81,24 +82,42 @@ function CommunityFeed(props) {
   ];
   console.log("Reach the community feed");
 
+  if (newPost) {
+    posts = [newPost, ...posts];
+  }
+
   return (
-    <div >
-      <AppBar position="static" sx={{alignItems: "center", justifyContent:'space-between',
-    paddingY:"4px"}}>
-        <Toolbar sx={{height:'50px', alignItems:'center', justifyContent:'center', flexGrow:'1',
-      padding:'0 20px'}}>
+    <div>
+      <AppBar
+        position="static"
+        sx={{
+          alignItems: "center",
+          justifyContent: "space-between",
+          paddingY: "4px",
+        }}
+      >
+        <Toolbar
+          sx={{
+            height: "50px",
+            alignItems: "center",
+            justifyContent: "center",
+            flexGrow: "1",
+            padding: "0 20px",
+          }}
+        >
           <Link to="/index">
             <Button
               color="secondary"
               variant="contained"
-              style={{ textDecoration: "none" }} size="small"
+              style={{ textDecoration: "none" }}
+              size="small"
             >
               {" "}
               Communities{" "}
             </Button>
           </Link>
-          <h1 style={{margin:'0 15px', fontSize:"32px"}}>{name}</h1>
-          <FormDialog posts={posts} />
+          <h1 style={{ margin: "0 15px", fontSize: "32px" }}>{name}</h1>
+          <FormDialog posts={posts} setNewPost={setNewPost} />
         </Toolbar>
       </AppBar>
       <Posts posts={posts} />

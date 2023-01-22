@@ -13,9 +13,11 @@ import { useCreateAsset, useLivepeerProvider } from "@livepeer/react";
 function FormDialog(props) {
   const provider = useLivepeerProvider();
 
+  const { setNewPost } = props;
+
   const [open, setOpen] = useState(false);
   const [postText, setPostText] = useState("");
-  const [video, setVideo] = useState("");
+  const [video, setVideo] = useState(undefined);
 
   const {
     mutate: createAsset,
@@ -56,11 +58,18 @@ function FormDialog(props) {
 
   const uploadVideo = () => {
     handleClose();
+    createAsset();
+    setNewPost({ author: "Loading..." });
   };
 
   return (
     <React.Fragment>
-      <Button color="secondary" variant="contained" onClick={handleClickOpen} size="small">
+      <Button
+        color="secondary"
+        variant="contained"
+        onClick={handleClickOpen}
+        size="small"
+      >
         Daily Check-in
       </Button>
       <Dialog open={open} onClose={handleClose}>
