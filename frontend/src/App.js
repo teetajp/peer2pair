@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import '@fontsource/roboto/300.css';
@@ -8,12 +9,26 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Community from './components/Community';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const AppRoutes = () => {
+  <BrowserRouter>
+    <Routes>
+      <Route path="/"></Route>
+    </Routes>
+  </BrowserRouter>
+}
+
 
 function App() {
   return (
     <div>
+
       <h1>Communities</h1>
       <Community/>
+
+      <AppRoutes />
+
     </div>
   )
 }
