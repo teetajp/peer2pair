@@ -47,18 +47,9 @@ app.get("/groups/:community_id", (req, res) => {
   })
 })
 
-app.get("/posts/:group_id", (req, res) => {
-  let sql = `SELECT * FROM posts WHERE group_id=${req.params.group_id} `;
 
-  db.query(sql, (err, result) => {
-    if (err) {res.send(err)}
-    else {
-      res.send(result);
-    }
-  })
-})
 
-app.post("/join_group/:user_id/:group_id", (req, res) => {
+app.post("/group/:user_id/:group_id", (req, res) => {
   let sql = `INSERT INTO users_groups (user_id, group_id) VALUES (${req.params.user_id}, ${req.params.group_id})`;
   console.log(sql);
 
@@ -72,6 +63,17 @@ app.post("/join_group/:user_id/:group_id", (req, res) => {
   })
 
   
+})
+
+app.get("/posts/:group_id", (req, res) => {
+  let sql = `SELECT * FROM posts WHERE group_id=${req.params.group_id} `;
+
+  db.query(sql, (err, result) => {
+    if (err) {res.send(err)}
+    else {
+      res.send(result);
+    }
+  })
 })
 
 app.post("/posts/:author_id/:group_id", (req, res) => {
