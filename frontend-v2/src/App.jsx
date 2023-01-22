@@ -9,7 +9,6 @@ import Index from "./components/Index";
 import CommunityFeed from "./components/CommunityFeed";
 import { ThemeProvider, createTheme, useTheme } from "@mui/material/styles";
 import Theme from "./components/Theme";
-import { useLivepeerProvider } from "@livepeer/react";
 
 function App() {
 {/* const provider = useLivepeerProvider(); */}
