@@ -12,7 +12,7 @@ export function FormDialog(props) {
     const handleClickOpen = () => {
         setOpen(true);
     }
-    
+
     const handleClose = () => {
         setOpen(false);
     }
@@ -20,7 +20,7 @@ export function FormDialog(props) {
     const postCheckin = () => {
         let post = {
             author: "current user",
-            text: {postText},
+            text: { postText },
             photos: [],
             videos: video,
             timestamp: "Sat 21/1/2023"
@@ -32,17 +32,22 @@ export function FormDialog(props) {
 
     return (
         <React.Fragment>
-        <Button color="inherit" variant="outlined" onClick={handleClickOpen}>Daily Checkin</Button>
+
+            <Button color="secondary" variant="contained" onClick={handleClickOpen}>Daily Checkin</Button>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Daily Checkin!</DialogTitle>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <DialogTitle>Daily Checkin!</DialogTitle>
                     <DialogContent>
-                            <DialogContentText>What do you want to update today?</DialogContentText>
-                            <TextField autoFocus multiline varian="standard" fullWidth onChange={(e) => setPostText(e.target.value)}></TextField>
+                        <DialogContentText>What do you want to update today?</DialogContentText>
+                        <TextField autoFocus multiline varian="standard" fullWidth onChange={(e) => setPostText(e.target.value)}></TextField>
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={postCheckin}>Post</Button>
-                    </DialogActions>
-            </Dialog> 
+                        <Button variant="contained" onClick={postCheckin}
+                            style={{ width: '100px', marginBottom:'5px' }}>Post</Button>
+                    </DialogActions> </div>
+            </Dialog>
         </React.Fragment>
+
     )
 }
+
