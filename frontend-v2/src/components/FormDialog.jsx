@@ -1,14 +1,21 @@
-import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from "@mui/material";
-import Button from '@mui/material/Button';
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  TextField,
+} from "@mui/material";
+import Button from "@mui/material/Button";
 import React, { useState } from "react";
 import { useCreateAsset, useLivepeerProvider } from "@livepeer/react";
 
 function FormDialog(props) {
     const provider = useLivepeerProvider();
 
-    const [open, setOpen] = useState(false);
-    const [postText, setPostText] = useState("");
-    const [video, setVideo] = useState("");
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
     const {
         mutate: createAsset,
@@ -26,26 +33,33 @@ function FormDialog(props) {
           : null,
       );
 
-    const handleClickOpen = () => {
-        setOpen(true);
-    }
-
     const handleClose = () => {
         setOpen(false);
     }
 
-    const postCheckin = () => {
-        let post = {
-            author: "current user",
-            text: { postText },
-            photos: [],
-            videos: video,
-            timestamp: "Sat 21/1/2023"
-        }
+  const postCheckin = () => {
+    console.log(postText);
+    let post = {
+      // author_id: ,
+      // text: { postText },
+      // photos: [],
+      // videos: video,
+      // timestamp: "Sat 21/1/2023"
+      title: "Title",
+      content: postText,
+    };
 
-        props.posts.push(post);
-        handleClose();
-    }
+    let author_id = 1;
+    let group_id = 1;
+    axios
+      .post(`http://localhost:4000/posts/${author_id}/${group_id}`, post)
+      .then((response) => {
+        console.log(response);
+      });
+
+    //props.posts.push(post);
+    handleClose();
+  };
 
     const uploadVideo = () => {
         handleClose();
