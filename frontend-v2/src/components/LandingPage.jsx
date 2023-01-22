@@ -18,7 +18,7 @@ function LandingPage() {
         the same goals.
       </h2>
       <div>
-        <Button sx={{ marginX: "1rem" }} variant="contained" size="medium" href="/SignIn">
+        <Button sx={{ marginX: "1rem" }} variant="contained" size="medium" href="/index">
           Login
         </Button>
         <Button sx={{ marginX: "1rem" }} variant="contained" size="medium" href="/SignUp">

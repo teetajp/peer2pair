@@ -31,16 +31,16 @@ function Community() {
     >
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={6}>
-          <Item name="Guitar" link="#" />
+          <Item name="Guitar" link="/feed" />
         </Grid>
         <Grid item xs={6}>
-          <Item name="Basketball" link="#" />
+          <Item name="Basketball" link="/feed" />
         </Grid>
         <Grid item xs={6}>
-          <Item name="Piano" link="#" />
+          <Item name="Piano" link="/feed" />
         </Grid>
         <Grid item xs={6}>
-          <Item name="Swimming" link="#" />
+          <Item name="Swimming" link="/feed" />
         </Grid>
       </Grid>
     </Card>
