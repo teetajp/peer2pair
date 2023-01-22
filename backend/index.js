@@ -82,12 +82,12 @@ app.post("/posts/:author_id/:group_id", (req, res) => {
   console.log(body);
 
   if (!body.title || !body.content){
-    return response.status(400).json({
+    return res.status(400).json({
       error: "missing either title or content"
     });
   }
-  let sql = `INSERT INTO posts (title, content, author_id, group_id) VALUES ("${body.title}", "${body.content}", ${Number(req.params.author_id)}, ${Number(req.params.group_id)})`;
-  db.query(sql, (err, res) => {
+  let sql = `INSERT INTO posts (title, content, author_id, group_id) VALUES ("${body.title}", "${body.content}", ${req.params.author_id}, ${req.params.group_id})`;
+  db.query(sql, (err, result) => {
     if (err) {res.send(err);}
     else{
       const savedPost = {
@@ -96,7 +96,7 @@ app.post("/posts/:author_id/:group_id", (req, res) => {
         author_id: req.params.author_id,
         group_id: req.params.group_id
       }
-      response.json(savedPost);
+      res.json(savedPost);
     }
   })
 })
