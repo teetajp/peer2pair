@@ -12,11 +12,11 @@ const Post = (props) => {
         <Paper
             sx={{
                 width: '70%',
-                margin: '25px auto',
+                margin: '30px auto',
                 display: 'flex',
                 flexDirection: 'column'
             }}>
-            <div style={{ margin: '15px' }}>
+            <div style={{ margin: '15px 20px' }}>
                 <div style={{
                     display: 'flex',
                     gap: '15px',
@@ -25,8 +25,10 @@ const Post = (props) => {
                     <Avatar style={{ display: 'inline-block' }} sx={{ bgcolor: 'primary' }}>
                         {props.post.avatar}</Avatar>
                     {props.post.author}
+                    <p style={{marginLeft:'auto', fontSize:'12px', color:'grey'}}>
+                        {props.post.timestamp}</p>
                 </div>
-                <p>{props.post.text}</p>
+                <p style={{marginBottom:'10px'}}>{props.post.text}</p>
                 {/* <Button variant="text"
                     sx={{ padding: '2px' }}>Comment</Button> */}
             </div>

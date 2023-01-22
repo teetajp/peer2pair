@@ -30,7 +30,48 @@ function CommunityFeed(props) {
             photos: [],
             videos: "",
             timestamp: "Sat 21/1/2023"
+        },
+        {
+            author: 'Tom',
+            avatar: 'T',
+            text: 'Today is not a nice day',
+            photos: [],
+            videos: "",
+            timestamp: "Sat 21/1/2023"
+        },
+        {
+            author: 'Tom',
+            avatar: 'T',
+            text: 'Today is not a nice day',
+            photos: [],
+            videos: "",
+            timestamp: "Sat 21/1/2023"
+        },
+        {
+            author: 'Tom',
+            avatar: 'T',
+            text: 'Today is not a nice day',
+            photos: [],
+            videos: "",
+            timestamp: "Sat 21/1/2023"
+        },
+        {
+            author: 'Tom',
+            avatar: 'T',
+            text: 'Today is not a nice day',
+            photos: [],
+            videos: "",
+            timestamp: "Sat 21/1/2023"
+        },
+        {
+            author: 'Tom',
+            avatar: 'T',
+            text: 'Today is not a nice day',
+            photos: [],
+            videos: "",
+            timestamp: "Sat 21/1/2023"
         }
+
     ]
     console.log("Reach the community feed");
 
