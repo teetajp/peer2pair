@@ -1,0 +1,1 @@
+INSERT INTO posts (title, content, author_id, group_id) VALUES ("Title A", "This is content A", (SELECT id FROM users WHERE name = "TJ"), 1);

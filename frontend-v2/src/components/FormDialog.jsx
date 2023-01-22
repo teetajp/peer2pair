@@ -1,6 +1,7 @@
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from "@mui/material";
 import Button from '@mui/material/Button';
 import React, { useState } from "react";
+import axios from 'axios';
 
 function FormDialog(props) {
 
@@ -17,15 +18,27 @@ function FormDialog(props) {
     }
 
     const postCheckin = () => {
+        console.log(postText);
         let post = {
-            author: "current user",
-            text: { postText },
-            photos: [],
-            videos: video,
-            timestamp: "Sat 21/1/2023"
-        }
+            // author_id: ,
+            // text: { postText },
+            // photos: [],
+            // videos: video,
+            // timestamp: "Sat 21/1/2023"
+            title: "Title",
+            content: postText
+        };
 
-        props.posts.push(post);
+        let author_id = 1;
+        let group_id = 1;
+        axios
+        .post(`http://localhost:4000/posts/${author_id}/${group_id}`, post)
+        .then(response => {
+            console.log(response);
+            
+        });
+
+        //props.posts.push(post);
         handleClose();
     }
 
