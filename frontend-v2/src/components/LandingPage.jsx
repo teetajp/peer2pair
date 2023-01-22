@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 
 
 function LandingPage() {
+  const provider = useLivepeerProvider();
   return (
     <>
       <div>

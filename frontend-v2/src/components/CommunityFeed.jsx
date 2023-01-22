@@ -5,12 +5,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FormDialog from "./FormDialog";
 import Posts from "./Posts";
+import { Player } from '@livepeer/react';
 //import HomeIcon from "./components/HomeIcon.js";
 
 function CommunityFeed(props) {
   const name = "Guitar";
+  const playBackId = "bafybeig45torihkqmjgh7zkud2fisfoz2uusesxwm4zeyluomjm63rt4fq";
   // let streak = 0;
+
   let posts = [
+
+    {
+      author: "Henry",
+      avatar: "H",
+      text: "Check this video out ",
+      photos: [],
+      videos: "",
+      timestamp: "Sat 21/1/2023",
+    },
+
     {
       author: "Henry",
       avatar: "H",
@@ -92,7 +105,6 @@ function CommunityFeed(props) {
           <FormDialog posts={posts} />
         </Toolbar>
       </AppBar>
-
       <Posts posts={posts} />
     </div>
   );
