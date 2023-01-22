@@ -53,6 +53,7 @@ function FormDialog(props) {
     };
 
     props.posts.push(post);
+
     handleClose();
   };
 

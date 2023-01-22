@@ -79,6 +79,7 @@ function CommunityFeed(props) {
       videos: "bafybeibeis3cm7ligy5czesew5hs2kms6c72x5lln2wtm465w2quchpq54",
       timestamp: "Sat 21/1/2023",
     },
+    
   ];
   console.log("Reach the community feed");
 
@@ -121,7 +122,6 @@ function CommunityFeed(props) {
         </Toolbar>
       </AppBar>
       <Posts posts={posts} />
-    </div>
   );
 }
 

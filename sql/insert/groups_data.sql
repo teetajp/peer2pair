@@ -1,0 +1,1 @@
+INSERT INTO `groups` (name, community_id) VALUES ("Group Guitar", 1);

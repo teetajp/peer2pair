@@ -1,7 +1,8 @@
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import * as React from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Item = (props) => {
   return (
@@ -19,8 +20,20 @@ const Item = (props) => {
     </Button>
   );
 };
+// const community_data = ["Guitar", "Basketball", "Piano", "Swimming"];
 
 function Community() {
+  const [communities, setCommunities] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(import.meta.env.VITE_BACKEND_URL + "/communities")
+      .then((response) => {
+        console.log(response.data);
+        setCommunities(response.data);
+      });
+  }, []);
+
   return (
     <Card
       sx={{
@@ -30,18 +43,11 @@ function Community() {
       }}
     >
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={6}>
-          <Item name="Guitar" link="/feed" />
-        </Grid>
-        <Grid item xs={6}>
-          <Item name="Basketball" link="/feed" />
-        </Grid>
-        <Grid item xs={6}>
-          <Item name="Piano" link="/feed" />
-        </Grid>
-        <Grid item xs={6}>
-          <Item name="Swimming" link="/feed" />
-        </Grid>
+        {communities.map((community, idx) => (
+          <Grid item xs={6} key={idx}>
+            <Item name={community.name} link="/feed" />
+          </Grid>
+        ))}
       </Grid>
     </Card>
   );
