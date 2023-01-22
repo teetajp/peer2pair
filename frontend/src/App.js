@@ -8,7 +8,7 @@ import About from "./Components/About";
 import Resume from "./Components/Resume";
 import Contact from "./Components/Contact";
 import Portfolio from "./Components/Portfolio";
-import SignIn from "./Components/SignIn";
+import Community from "./Components/Community";
 import SignUp from "./Components/SignUp";
 import {Routes, Route, Link} from "react-router-dom";
 
@@ -51,7 +51,7 @@ class App extends Component {
       <div className="App">
         <Routes>
           <Route path = "/" element = {<Header data={this.state.resumeData.main}></Header>}> </Route>
-          <Route path = "/SignIn" element = {<SignIn></SignIn>}> </Route>
+          <Route path = "/Community" element = {<Community></Community>}> </Route>
           <Route path = "/SignUp" element = {<SignUp></SignUp>}> </Route>
         </Routes>
 
