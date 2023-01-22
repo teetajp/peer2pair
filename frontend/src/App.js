@@ -53,7 +53,6 @@ class App extends Component {
           <Route path = "/" element = {<Header data={this.state.resumeData.main}></Header>}> </Route>
           <Route path = "/SignIn" element = {<SignIn></SignIn>}> </Route>
           <Route path = "/SignUp" element = {<SignUp></SignUp>}> </Route>
-          <Route path = "/SignUp" element = {<SignUp></SignUp>}> </Route>
         </Routes>
 
        {/*  <Header data={this.state.resumeData.main} />
