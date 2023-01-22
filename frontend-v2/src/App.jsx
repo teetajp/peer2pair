@@ -9,10 +9,13 @@ import Index from "./components/Index";
 import CommunityFeed from "./components/CommunityFeed";
 import { ThemeProvider, createTheme, useTheme } from "@mui/material/styles";
 import Theme from "./components/Theme";
+import { useLivepeerProvider } from "@livepeer/react";
 
 function App() {
+{/* const provider = useLivepeerProvider(); */}
   return (
     <div className="App">
+      {/* <h1>Hello Peer2Pair = {provider.getConfig().name}</h1> */}
       <ThemeProvider theme={Theme}>
         <BrowserRouter>
           <Routes>

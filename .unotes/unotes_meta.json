@@ -1,0 +1,33 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "backend": {
+      "name": "backend",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "frontend": {
+      "name": "frontend",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "frontend-v2": {
+      "name": "frontend-v2",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "sql": {
+      "name": "sql",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}
