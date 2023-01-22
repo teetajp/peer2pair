@@ -11,6 +11,7 @@ nwHacks 2023 Project
 - `npm start` to develop
 
 ## Backend
+Create a `.env` file and copy paste the database keys
 - `npm install`
 - `npm run dev`
 - `npm run start`
