@@ -1,6 +1,7 @@
 import { Toolbar } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 import React from "react";
 import { Link } from "react-router-dom";
 import FormDialog from "./FormDialog";
@@ -28,51 +29,12 @@ function CommunityFeed(props) {
       videos: "",
       timestamp: "Sat 21/1/2023",
     },
-    {
-      author: "Tom",
-      avatar: "T",
-      text: "Today is not a nice day",
-      photos: [],
-      videos: "",
-      timestamp: "Sat 21/1/2023",
-    },
-    {
-      author: "Tom",
-      avatar: "T",
-      text: "Today is not a nice day",
-      photos: [],
-      videos: "",
-      timestamp: "Sat 21/1/2023",
-    },
-    {
-      author: "Tom",
-      avatar: "T",
-      text: "Today is not a nice day",
-      photos: [],
-      videos: "",
-      timestamp: "Sat 21/1/2023",
-    },
-    {
-      author: "Tom",
-      avatar: "T",
-      text: "Today is not a nice day",
-      photos: [],
-      videos: "",
-      timestamp: "Sat 21/1/2023",
-    },
-    {
-      author: "Tom",
-      avatar: "T",
-      text: "Today is not a nice day",
-      photos: [],
-      videos: "",
-      timestamp: "Sat 21/1/2023",
-    },
+    
   ];
   console.log("Reach the community feed");
 
   return (
-    <div>
+    <Container>
       <AppBar position="static">
         <Toolbar>
           <Link to="/">
@@ -86,15 +48,12 @@ function CommunityFeed(props) {
             </Button>
           </Link>
           <h1>{name}</h1>
-          {/* <Typography component="div" sx={{ flexGrow: 1}}>
-                        {streak}
-                    </Typography> */}
           <FormDialog posts={posts} />
         </Toolbar>
       </AppBar>
 
       <Posts posts={posts} />
-    </div>
+    </Container>
   );
 }
 

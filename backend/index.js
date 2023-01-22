@@ -26,6 +26,7 @@ app.get("/users", (req, res) => {
 })
 
 app.get("/communities", (req, res) => {
+  console.log("/communities")
   let sql = "SELECT name FROM communities ORDER BY name";
   db.query(sql, (err, result) => {
     if (err) { res.send(err); }
