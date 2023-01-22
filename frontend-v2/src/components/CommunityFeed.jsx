@@ -6,11 +6,9 @@ import { Link } from "react-router-dom";
 import FormDialog from "./FormDialog";
 import Posts from "./Posts";
 import { Player } from '@livepeer/react';
-//import HomeIcon from "./components/HomeIcon.js";
 
 function CommunityFeed(props) {
   const name = "Guitar";
-  // let streak = 0;
 
   let posts = [
 
@@ -84,23 +82,22 @@ function CommunityFeed(props) {
   console.log("Reach the community feed");
 
   return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          <Link to="/">
+    <div >
+      <AppBar position="static" sx={{alignItems: "center", justifyContent:'space-between',
+    paddingY:"4px"}}>
+        <Toolbar sx={{height:'50px', alignItems:'center', justifyContent:'center', flexGrow:'1',
+      padding:'0 20px'}}>
+          <Link to="/index">
             <Button
               color="secondary"
               variant="contained"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none" }} size="small"
             >
               {" "}
-              Community{" "}
+              Communities{" "}
             </Button>
           </Link>
-          <h1>{name}</h1>
-          {/* <Typography component="div" sx={{ flexGrow: 1}}>
-                        {streak}
-                    </Typography> */}
+          <h1 style={{margin:'0 15px', fontSize:"32px"}}>{name}</h1>
           <FormDialog posts={posts} />
         </Toolbar>
       </AppBar>
