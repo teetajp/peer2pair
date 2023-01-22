@@ -5,7 +5,7 @@ import { Player } from "@livepeer/react";
 import "./Posts.css";
 
 const Post = (props) => {
-  const playBackId = "bafybeig45torihkqmjgh7zkud2fisfoz2uusesxwm4zeyluomjm63rt4fq";
+  const playBackId = props.post.videos;
   return (
     <Paper
       sx={{
