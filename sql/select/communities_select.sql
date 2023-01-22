@@ -1,0 +1,1 @@
+SELECT name FROM communities ORDER BY name;
