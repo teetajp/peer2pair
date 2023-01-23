@@ -9,7 +9,7 @@ function LandingPage() {
     <>
       <div>
       <a href="https://peer2pair.vercel.app" target="_blank">
-          <img src="/peer2pair.svg" className="logo" alt="Peer2Pair logo" />
+          <img src="/thug_pear.png" className="logo" alt="Peer2Pair logo" />
         </a>
       </div>
       <h1>Peer2Pair</h1>

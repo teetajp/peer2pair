@@ -28,6 +28,7 @@ const Post = (props) => {
           <Avatar
             style={{ display: "inline-block" }}
             sx={{ bgcolor: "primary" }}
+            src="../src/assets/thug_pear.png"
           />
           {props.post.author}
           <p style={{ marginLeft: "auto", fontSize: "12px", color: "grey" }}>

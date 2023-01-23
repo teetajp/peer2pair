@@ -11,7 +11,7 @@ function Index() {
     <>
       <div>
         <a href="/" target="_blank">
-          <img src="/peer2pair.svg" className="logo" alt="Peer2Pair logo" />
+          <img src="/thug_pear.png" className="logo" alt="Peer2Pair logo" />
         </a>
       </div>
       <h1>My Communities</h1>
